@@ -34,28 +34,52 @@
           <img src="assets/petal.png" alt="" class="background-image">
           <div class="content">
               <div class="date">Save the date!</div>
-              <div class="names">Tammy and&nbsp;Jono</div>
-              <div class="date" id="date"><span class="script">Sunday,</span> 4<sup>th</sup> October&nbsp;2026</div>
-
-              <div>
-                <div class="info">
-                  <img src="assets/flower-1.png" alt="" class="info-image">
-                  <div class="label">Ceremony</div>
-                  <div><span class="script">Palm House <span class="narrow-remove">— </span></span></div>
-                  <div>Royal Botanic Garden</div>
+              <div class="columns">
+                <div class="slideshow">
+                  <img src="assets/jt1.jpeg" alt="" class="slideshow-image" id="slideshow-image">
                 </div>
+                <div class="right">
+                  <div class="names">Tammy and&nbsp;Jono</div>
+                  <div class="date" id="date"><span class="script">Sunday,</span> 4<sup>th</sup> October&nbsp;2026</div>
 
-                <div class="info">
-                  <img src="assets/flower-2.png" alt="" class="info-image">
-                  <div class="label">Reception</div>
-                  <div><span class="script">Nomad <span class="narrow-remove">— </span></span></div>
-                  <div>Surry Hills</div>
+                  <div>
+                    <div class="info">
+                      <img src="assets/flower-1.png" alt="" class="info-image">
+                      <div class="label">Ceremony</div>
+                      <div><span class="script">Palm House <span class="narrow-remove">— </span></span></div>
+                      <div>Royal Botanic Garden</div>
+                    </div>
+
+                    <div class="info">
+                      <img src="assets/flower-2.png" alt="" class="info-image">
+                      <div class="label">Reception</div>
+                      <div><span class="script">Nomad <span class="narrow-remove">— </span></span></div>
+                      <div>Surry Hills</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
               <div class="website">More details to come soon!</div>
           </div>
       </div>
   </body>
-</html>
+
+<script>
+  let image = document.getElementById('slideshow-image');
+  let images = ['assets/jt1.jpeg', 'assets/jt2.jpeg', 'assets/jt3.jpeg', 'assets/jt4.jpeg', 'assets/jt5.jpeg', 'assets/jt6.jpeg', 'assets/jt7.jpeg'];
+  let num = 1;
+
+  console.log(num)
+
+  setInterval(function(){
+    let len = images.length;
+    image.src = images[num++];
+    if (num == len) {
+      num = 0;
+    }
+
+    console.log(num)
+  }, 4500);
+</script>
+
 </html>
