@@ -101,7 +101,7 @@ body {
 }
 
 #date {
-  margin: 0 0 4rem 0;
+  margin: 1rem 0 4rem 0;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
@@ -165,7 +165,7 @@ body {
   }
 
   .names {
-    margin: 0 0 3rem 0;
+    margin: 1.5rem 0 2.5rem 0;
   }
 
   .slideshow-image {
@@ -174,7 +174,7 @@ body {
   }
 
   #date {
-    margin: -2rem 0 2rem 0;
+    margin: -2rem 0 2.5rem 0;
   }
 
   .narrow-remove {
