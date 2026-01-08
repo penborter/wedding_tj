@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Homemade+Apple&display=swap');
+
 @font-face {
   font-family: 'Avenir';
   src: url('assets/AvenirLTProBook.otf') format('opentype');
@@ -28,7 +30,7 @@ body {
   --large-text: clamp(2rem, 7vw, 4rem);
   --small-text: clamp(0.75rem, 2vw, 1.25rem);
 
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Courier Prime', monospace;
   background-color: var(--bg);
   color: var(--fg);
   min-height: 100vh;
@@ -88,7 +90,7 @@ body {
 }
 
 .names {
-  font-family: 'Above the Beyond', sans-serif, cursive;
+  font-family: 'Homemade Apple', sans-serif, cursive;
   font-size: var(--large-text);
   font-weight: 400;
   line-height: 1.2;
@@ -123,19 +125,18 @@ body {
 
 .info img {
   grid-row: 1 / -1;
-  max-width: 40px;
-  margin-bottom: 0.5em;
+  max-width: 45px;
+  margin: 0 0 0.5em 0;
 }
 
 .info .label {
   font-size: var(--small-text);
   text-transform: uppercase;
   grid-column: 2 / -1;
-  margin-bottom: 0.25rem;
 }
 
 .script {
-  font-family: 'Above the Beyond', sans-serif, cursive;
+  font-family: 'Homemade Apple', sans-serif, cursive;
 }
 
 .website {
@@ -190,5 +191,15 @@ body {
 
   .info div {
     margin: -0.2rem 0;
+  }
+
+  .info img {
+    margin: 0.5em 0 0 0;
+  }
+
+  .script {
+    font-size: 1.2em;
+    margin: 0.75rem 0 -0.25rem 0;
+    display: block;
   }
 }
