@@ -103,7 +103,7 @@ body {
 }
 
 #date {
-  margin: 1rem 0 4rem 0;
+  margin: 1.5rem 0 4rem 0;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
@@ -149,7 +149,7 @@ body {
 
   .container {
     --mid-text: clamp(1.25rem, 2.5vw, 1.75rem);
-    --large-text: clamp(2.25rem, 6vw, 4rem);
+    --large-text: clamp(2.5rem, 6vw, 4rem);
     --small-text: clamp(1rem, 2vw, 1.5rem);
 
     padding: 1rem;
@@ -174,7 +174,7 @@ body {
   }
 
   #date {
-    margin: -2rem 0 2.5rem 0;
+    margin: -1rem 0 2.5rem 0;
   }
 
   .narrow-remove {
