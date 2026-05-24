@@ -66,6 +66,7 @@ a {
 
 .left .pic {
   max-width: 100%;
+  margin-top: 2em;
 }
 
 nav {
@@ -208,6 +209,10 @@ p {
 
 .script {
   font-family: 'Homemade Apple', sans-serif, cursive;
+}
+
+h2.script {
+  margin: 2em 0 -0.25em 0;
 }
 
 h2.script::after {
