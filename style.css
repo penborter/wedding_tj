@@ -21,7 +21,7 @@
 }
 
 html {
-  scroll-padding-top: 7.5rem;
+  scroll-padding-top: 9rem;
 }
 
 body {
@@ -38,13 +38,34 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+}
+
+a {
+  color: var(--fg);
+  text-underline-offset: 3px;
+}
+
+#index {
+  justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 
-#index {
-  justify-content: center;
+.cols {
+  margin: 0 1.5em;
+}
+
+.right {
+  padding-top: 40px;
+}
+
+.left .pic {
+  max-width: 100%;
 }
 
 nav {
@@ -54,7 +75,7 @@ nav {
   z-index: 1;
   background: var(--bg);
 
-  padding: 0 1.5em 1em 1.5em;
+  padding: 0 0 1em 0;
 }
 
 nav, h3 {
@@ -78,12 +99,17 @@ nav a:not(h1):hover {
 }
 
 nav .names {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hide .names {
+  padding-top: 1em;
+  font-size: 40px;
 }
 
 p {
-  margin: 0.5em 0 1em 0;
-  line-height: 1.4;
+  margin: 0.75em 0 1.25em 0;
+  line-height: 1.5;
 }
 
 .container {
@@ -113,22 +139,11 @@ p {
   align-items: center;
 }
 
-.columns {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-}
-
-.cols-3 {
-  grid-template-columns: 2fr 3fr 3fr;
-  column-gap: 1em;
-}
-
 #right {
   margin-top: -0.2em;
 }
 
 .pic {
-  border: 2px solid var(--fg);
   border-radius: 10px;
   box-shadow: 0 2px 2px var(--shadow-color),0 4px 4px var(--shadow-color),0 8px 8px var(--shadow-color);
 }
@@ -140,10 +155,6 @@ p {
 #slideshow-image {
   margin: 1rem;
   width: calc(100% - 2rem);
-}
-
-.right {
-  margin-left: 2rem;
 }
 
 .names {
@@ -199,6 +210,21 @@ p {
   font-family: 'Homemade Apple', sans-serif, cursive;
 }
 
+h2.script::after {
+  content: "";
+  display: inline-block;
+  height: 1.5em;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  background: center / contain no-repeat;
+}
+
+.left h2.script::after                            { background-image: url('assets/flower-7.png');  aspect-ratio: 1230 / 2048; } /* 1st — Welcome */
+.cols.right > div:nth-of-type(1) h2.script::after { background-image: url('assets/flower-8.png');  aspect-ratio: 2000 / 1977; } /* 2nd — Details */
+.cols.right > div:nth-of-type(2) h2.script::after { background-image: url('assets/flower-9.png');  aspect-ratio: 1459 / 2048; } /* 3rd — Travel */
+.cols.right > div:nth-of-type(3) h2.script::after { background-image: url('assets/flower-10.png'); aspect-ratio: 1688 / 2048; } /* 4th — Dress */
+.cols.right > div:nth-of-type(4) h2.script::after { background-image: url('assets/flower-11.png'); aspect-ratio: 1369 / 2048; } /* 5th — FAQs */
+
 .courier, .label {
   font-family: 'Courier Prime', monospace;
 }
@@ -238,6 +264,20 @@ p {
   width: fit-content;
 }
 
+@media (min-width: 811px) {
+  html {
+    scroll-padding-top: 40px;
+  }
+
+  .left {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
 @media (max-width: 810px) {
 
   .container {
@@ -251,18 +291,26 @@ p {
 
   body {
     gap: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
+
   .columns {
     display: block;
     margin: 0 1.5em;
   }
 
   .right {
-    margin: auto;
+    padding-top: 0;
   }
 
   .names {
     margin: 1.5rem 0 2.5rem 0; 
+  }
+
+  nav .names {
+    margin-top: 2.5rem;
   }
 
   #slideshow-image {
@@ -300,12 +348,18 @@ p {
     display: block;
   }
 
-  img {
-    max-width: calc(100vw - 3em);
+  h2.script {
+    margin: 2rem 0 -0.25rem 0;
+    font-size: 1.5em;
   }
 
   .show {
     display: inline;
+  }
+
+  nav.show {
+    display: block;
+    padding:  0 1.5em 2em 1.5em;
   }
 
   .hide {

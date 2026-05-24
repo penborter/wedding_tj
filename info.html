@@ -15,8 +15,7 @@
   </head>
 
   <body>
-
-    <nav>
+    <nav class="show">
       <h1 class="names"><a href="info.html">tammy + jono</a></h1>
       <div id="nav">
         <a href="info.html#details">Details</a>
@@ -26,17 +25,28 @@
         <a href="rsvp.html">RSVP</a>
       </div>
     </nav>
-
-    <div class="columns cols-3">
+    <div class="cols left">
+      <nav class="hide">
+        <h1 class="names"><a href="info.html">tammy + jono</a></h1>
+        <div id="nav">
+          <a href="info.html#details">Details</a>
+          <a href="info.html#travel">Travel</a>
+          <a href="info.html#dress">Dress</a>
+          <a href="info.html#faq">FAQ</a>
+          <a href="rsvp.html">RSVP</a>
+        </div>
+     </nav>
       <div> 
         <h2 class="nospace script">Welcome!</h2>
-        <p class="nospace">We're looking forward to celebrating with you all! This website contains all of the info you'll need for the day — read on!</p>
+        <p class="nospace">We're looking forward to celebrating with you all! This page contains all of the info you'll need for the day — read on!</p>
         
-        <a href="rsvp.html" class="button" id="rsvp_link">⭐ <span class="hide">Click </span><span class="show">Tap </span>here to RSVP! ⭐</a>
+        <span class="hide">Click </span><span class="show">Tap </span><a href="rsvp.html" id="rsvp_link">here</a> to RSVP!
 
-        <img class="pic" src="assets/jt1.jpeg" alt="A picture of Tammy and Jono">
+        <img class="pic hide" src="assets/jt1.jpeg" alt="A picture of Tammy and Jono">
       </div>
+    </div>
 
+    <div class="cols right">
       <div>
         <h2 class="script" id="details">Details</h2>
         <p>DATE: <strong>Sunday 4<sup>th</sup> October 2026</strong></p>
@@ -113,11 +123,6 @@
 
         <h3>Any other questions?</h3>
         <p>If you have any more questions, feel free to give either of us a call!</p>
-      </div>
-
-      <div class="button-container">
-        <a href="rsvp.html" class="button">RSVP here!</a>
-        <a href="info.html" class="button">Back to top!</a>
       </div>
     </div>
   </body>
