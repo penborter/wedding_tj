@@ -18,8 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
     })
-      .then(function (response) { return response.json(); })
-      .then(function () {
+      .then(function (response) {
+        // We don't need the response body — a 2xx means FormSubmit accepted it.
+        if (!response.ok) {
+          throw new Error('FormSubmit responded with status ' + response.status);
+        }
+
         var elements = form.querySelector('.form-elements');
         if (elements) elements.style.display = 'none';
 
