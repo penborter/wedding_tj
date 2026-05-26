@@ -16,7 +16,15 @@
 
   <body>
     <nav class="show">
-      <h1 class="names"><a href="info.html">tammy + jono</a></h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <div class="nav-bar">
+        <h1 class="names"><a href="info.html">tammy + jono</a></h1>
+        <label for="nav-toggle" class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
       <div id="nav">
         <a href="info.html#details">Details</a>
         <a href="info.html#travel">Travel</a>
@@ -125,5 +133,7 @@
         <p>If you have any more questions, feel free to give either of us a call!</p>
       </div>
     </div>
+
+    <script src="nav.js"></script>
   </body>
 </html>

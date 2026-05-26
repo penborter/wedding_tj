@@ -20,7 +20,15 @@
   <body>
 
     <nav class="show">
-      <h1 class="names"><a href="info.html">tammy + jono</a></h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <div class="nav-bar">
+        <h1 class="names"><a href="info.html">tammy + jono</a></h1>
+        <label for="nav-toggle" class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
       <div id="nav">
         <a href="info.html#details">Details</a>
         <a href="info.html#travel">Travel</a>
@@ -43,51 +51,38 @@
       </nav>
       <div> 
         <h2 class="nospace script">RSVP!</h2>
-        <p class="nospace">We're looking forward to celebrating with you all! This page contains all of the info we need from those coming!</p>
-        
-        <a href="rsvp.html" class="button" id="rsvp_link">⭐ <span class="hide">Look right!</span><span class="show">Scroll down!</span> ⭐</a>
-
-        <img class="pic" src="assets/jt4.jpeg" alt="A picture of Tammy and Jono">
+        <p class="nospace">We can't wait to celebrate with you — let us know you're coming below!</p>
+      
+        <img class="pic hide" src="assets/jt4.jpeg" alt="A picture of Tammy and Jono">
       </div>
     </div>
 
     <div class="cols right">
-      <p class="welcome">
-        RSVPs will be open soon!
-      </p>
       <p>
         If you have any questions, please check any of the links above, or feel free to reach out to either of us.
       </p>
 
       <form
-        class="gform hidden"
-        action="https://script.google.com/macros/s/AKfycby_p5SJChj98imM7T_kLZ44JLHgV9n_Z2dUDTnx8u9TU5GqBLm0X1YY7H9uKWM4RGn3/exec"
+        class="rsvp-form"
+        action="https://formsubmit.co/tammyandjono@gmail.com"
         method="POST"
       >
         <div class="form-elements">
-          <input type="text" name="code" class="hidden">
+          <!-- spam honeypot: bots fill this in, humans never see it -->
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New wedding RSVP!">
+          <input type="hidden" name="_template" value="table">
 
-          <label>
-            Please let us know who will or will not be attending:
-          </label> <br>
+          <label for="rsvp-names">Name(s)</label> <br>
+          <input type="text" id="rsvp-names" name="Name(s)" size="40" class="mb-1" placeholder="Who's coming?" required> <br>
 
-          <span class="nameChecks">
-          </span>
+          <label for="rsvp-dietaries">Any dietaries?</label> <br>
+          <input type="text" id="rsvp-dietaries" name="Any dietaries?" size="40" class="mb-1" placeholder="Allergies, vego, etc. — or leave blank"> <br>
 
-          <label>
-            Best contact email:
-          </label> <br>
-          <input type="email" name="email" size="40" placeholder="hello@example.com" class="mb-1"> <br>
+          <label for="rsvp-song">Favourite song</label> <br>
+          <input type="text" id="rsvp-song" name="Favourite song" size="40" class="mb-1" placeholder="e.g. Parachute, by Timomatic"> <br>
 
-          <label>
-            One (1) dancefloor request:
-          </label> <br>
-          <input type="text" name="song" size="40" class="mb-1" placeholder="e.g. Parachute, by Timomatic"> <br>
-
-          <label>
-            Any dietary restrictions:
-          </label> <br>
-          <textarea name="message" placeholder="Please note guest(s) for whom the restriction applies" cols="39" class="mb-1"></textarea> <br>
           <button type="submit" class="button" id="rsvp_submit">RSVP!</button>
         </div>
 
@@ -97,26 +92,10 @@
         </p>
 
       </form>
-
-      <!--
-      <form
-        class="invite_code"
-        action="https://script.google.com/macros/s/AKfycbx4Z_jxVzSnjaD2Knsn_lwcMG60zLcza3fHhxhzQMx0BHVoy0_RlG8fLxe8DxCzLreY/exec"
-        method="GET"
-      >
-        <div class="form-elements">
-          <label>
-            Please enter the 6-letter code (in orange, on the card attached your invitation) to reveal the RSVP form:
-          </label> <br>
-          <input type="text" name="code" size="40" placeholder="ABCDEF" class="mb-1"> <br>
-          <button type="submit" class="button" id="code_submit">Submit!</button>
-        </div>
-      </form>
-      -->
     </div>
 
-    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
-    <script type="text/javascript" src="sheets.js"></script>
+    <script src="rsvp.js"></script>
+    <script src="nav.js"></script>
 
   </body>
 </html>
