@@ -84,9 +84,14 @@ nav, h3 {
 }
 
 h3 {
-  margin: 1.25em 0 0.5em 0;
+  margin: 1.4em 0 0.4em 0;
   line-height: 1.2;
   font-size: 1.05rem;
+  font-weight: 400;
+}
+
+h3 + p {
+  margin-top: 0;
 }
 
 nav a {
@@ -232,6 +237,7 @@ h2.script::after {
 
 .courier, .label {
   font-family: 'Courier Prime', monospace;
+  font-size: 1.1em;
 }
 
 .website {
@@ -256,7 +262,12 @@ h2.script::after {
   width: 100%;
   text-align: center;
 
+  cursor: pointer;
   box-shadow: 0 2px 2px var(--shadow-color),0 4px 4px var(--shadow-color),0 8px 8px var(--shadow-color);
+}
+
+.button:hover {
+  box-shadow: 0 2px 2px var(--shadow-color),0 4px 4px var(--shadow-color),0 8px 8px var(--shadow-color),0 16px 16px var(--shadow-color);
 }
 
 .button-container {
