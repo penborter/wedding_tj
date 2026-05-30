@@ -56,6 +56,14 @@ a {
   gap: 2em;
 }
 
+#index-nav {
+  padding-bottom: 1em;
+}
+
+#index-nav .nav-bar {
+  height: 22.4px;
+}
+
 .cols {
   margin: 0 1.5em;
 }
@@ -66,7 +74,7 @@ a {
 
 .left .pic {
   max-width: 100%;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 nav {
@@ -98,6 +106,8 @@ nav a {
   color: var(--fg);
   text-decoration-thickness: 0.05em;
   text-underline-offset: 0.2em;
+
+  font-size: 0.95em;
 }
 
 nav a:not(h1):hover {
@@ -125,14 +135,15 @@ p {
 }
 
 .background-image {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
   max-width: 800px;
   opacity: 0.2;
-  z-index: 0;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .content {
@@ -154,14 +165,6 @@ p {
   box-shadow: 0 2px 2px var(--shadow-color),0 4px 4px var(--shadow-color),0 8px 8px var(--shadow-color);
 }
 
-.slideshow {
-  margin: auto;
-}
-
-#slideshow-image {
-  margin: 1rem;
-  width: calc(100% - 2rem);
-}
 
 .names {
   font-family: 'Homemade Apple', sans-serif, cursive;
@@ -220,6 +223,10 @@ h2.script {
   margin: 2em 0 -0.25em 0;
 }
 
+h2.nospace.script {
+  margin-top: 0em;
+}
+
 h2.script::after {
   content: "";
   display: inline-block;
@@ -255,25 +262,33 @@ h2.script::after {
   margin: 1em auto;
   padding: 1em;
   width: fit-content;
-  background: var(--fg);
+  background: var(--accent);
   border-radius: 10px;
-  color: var(--bg);
+  border: none;
+  color: var(--fg);
   text-decoration: none;
   width: 100%;
   text-align: center;
 
   cursor: pointer;
   box-shadow: 0 2px 2px var(--shadow-color),0 4px 4px var(--shadow-color),0 8px 8px var(--shadow-color);
+  transition: transform 0.1s ease;
 }
 
 .button:hover {
   box-shadow: 0 2px 2px var(--shadow-color),0 4px 4px var(--shadow-color),0 8px 8px var(--shadow-color),0 16px 16px var(--shadow-color);
+  transform: translateY(-2px);
 }
 
 .button-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
+}
+
+#rsvp_submit {
+  background: var(--fg);
+  color: var(--bg);
 }
 
 #rsvp_link {
@@ -343,11 +358,6 @@ h2.script::after {
     margin-top: 2.5rem;
   }
 
-  #slideshow-image {
-    max-width: 300px;
-    width: 60vw;
-  }
-
   #date {
     margin: -1.5rem 0 2rem 0;
   }
@@ -399,8 +409,10 @@ h2.script::after {
     gap: 1rem;
   }
 
-  nav.show .nav-bar .names {
-    margin: 0;   /* spacing handled by the nav padding */
+  nav.show .nav-bar .names,
+  nav.show .nav-bar h2 {
+    margin: 0;
+    line-height: 0;
   }
 
   /* visually-hidden checkbox that drives the toggle (kept focusable) */

@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width" />
 
-    <title>Tammy and Jono — save the date!</title>
-    <meta name="description" content="Save the date!">
+    <title>Welcome | T + J</title>
+    <meta name="description" content="Welcome!">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://tammyandjono.com">
@@ -29,39 +29,72 @@
     <meta name="robots" content="noindex, nofollow" />
   </head>
 
-  <body id="index">
-      <div class="container">
-          <img src="assets/petal.png" alt="" class="background-image">
-          <div class="content">
-              <div class="date script">Save the Date!</div>
-              <div class="columns">
-                <div class="slideshow">
-                  <img src="assets/jt1.jpeg" alt="" class="pic" id="slideshow-image">
-                </div>
-                <div class="right">
-                  <div class="names">tammy +&nbsp;jono</div>
-                  <div class="date courier" id="date">04.10.2026</div>
-
-                  <div>
-                    <div class="info">
-                      <img src="assets/flower-1.png" alt="" class="info-image">
-                      <div class="label">Ceremony</div>
-                      <div><span class="script">Palm House <span class="narrow-remove">— </span></span></div>
-                      <div>Royal Botanic Garden</div>
-                    </div>
-
-                    <div class="info">
-                      <img src="assets/flower-2.png" alt="" class="info-image">
-                      <div class="label">Reception</div>
-                      <div><span class="script">Nomad <span class="narrow-remove">— </span></span></div>
-                      <div>Surry Hills</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="website">More details to come soon!</div>
-          </div>
+  <body>
+    <nav class="show" id="index-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <div class="nav-bar">
+        <h2 class="nospace script">Welcome!</h2>
+        <label for="nav-toggle" class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
       </div>
+      <div id="nav">
+        <a href="info.html#details">Details</a>
+        <a href="info.html#travel">Travel</a>
+        <a href="info.html#dress">Dress</a>
+        <a href="info.html#faq">FAQ</a>
+        <a href="rsvp.html">RSVP</a>
+        <a href="info.html#photos">Photos</a>
+      </div>
+    </nav>
+
+    <div class="cols left">
+      <nav class="hide">
+        <h1 class="names"><a href="info.html">tammy + jono</a></h1>
+        <div id="nav">
+          <a href="info.html#details">Details</a>
+          <a href="info.html#travel">Travel</a>
+          <a href="info.html#dress">Dress</a>
+          <a href="info.html#faq">FAQ</a>
+          <a href="rsvp.html">RSVP</a>
+          <a href="info.html#photos">Photos</a>
+        </div>
+     </nav>
+      <div>
+        <h2 class="nospace script hide">Welcome!</h2>
+
+        <div class="button-container">
+          <a href="info.html" class="button">Info!</a>
+          <a href="rsvp.html" class="button">RSVP!</a>
+        </div>
+        <img src="assets/jt1.jpeg" alt="A picture of Tammy and Jono" class="pic" id="slideshow-image">
+      </div>
+    </div>
+
+    <div class="cols right">
+      <div class="names">tammy +&nbsp;jono</div>
+      <div class="date courier" id="date">04.10.2026</div>
+
+
+
+      <div class="info">
+        <img src="assets/flower-1.png" alt="" class="info-image">
+        <div class="label">Ceremony</div>
+        <div><span class="script">Palm House <span class="narrow-remove">— </span></span></div>
+        <div>Royal Botanic Garden</div>
+      </div>
+
+      <div class="info">
+        <img src="assets/flower-2.png" alt="" class="info-image">
+        <div class="label">Reception</div>
+        <div><span class="script">Nomad <span class="narrow-remove">— </span></span></div>
+        <div>Surry Hills</div>
+      </div>
+    </div>
+
+    <script src="nav.js"></script>
   </body>
 
 <script>
