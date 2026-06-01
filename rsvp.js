@@ -4,6 +4,35 @@ document.addEventListener('DOMContentLoaded', function () {
   var form = document.querySelector('form.rsvp-form');
   if (!form) return;
 
+  // The form's `action` points at the standard endpoint so the no-JS fallback
+  // still works as a native POST. For fetch we use FormSubmit's AJAX endpoint
+  // (formsubmit.co/ajax/<email>), which returns JSON with proper CORS headers.
+  var ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
+  var TIMEOUT_MS = 15000;
+
+  // POST the form once, rejecting on non-2xx or timeout.
+  function submitOnce() {
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, TIMEOUT_MS);
+
+    return fetch(ajaxUrl, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
+      signal: controller.signal
+    }).then(function (response) {
+      clearTimeout(timer);
+      if (!response.ok) {
+        throw new Error('FormSubmit responded with status ' + response.status);
+      }
+      return response;
+    }, function (err) {
+      clearTimeout(timer);
+      throw err;
+    });
+  }
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -13,17 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
       submitButton.textContent = 'Sending…';
     }
 
-    fetch(form.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    })
-      .then(function (response) {
-        // We don't need the response body — a 2xx means FormSubmit accepted it.
-        if (!response.ok) {
-          throw new Error('FormSubmit responded with status ' + response.status);
-        }
-
+    // Try once, then retry a single time on failure (covers flaky connections).
+    submitOnce()
+      .catch(function () { return submitOnce(); })
+      .then(function () {
         var elements = form.querySelector('.form-elements');
         if (elements) elements.style.display = 'none';
 
